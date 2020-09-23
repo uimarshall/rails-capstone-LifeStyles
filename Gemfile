@@ -29,6 +29,14 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+# Use font awesome for adding icons
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
+
+# Use hirb for better database table display in console
+gem 'hirb', '~> 0.7.3'
+
+# Use Devise for user authentication
+gem 'devise', '~> 4.2'
 
 # Use figaro to set ENV variables
 gem 'figaro', '~> 1.2'
