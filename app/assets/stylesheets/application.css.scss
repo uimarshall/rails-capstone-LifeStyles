@@ -1,0 +1,64 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "font-awesome";
+
+h1,
+h2,
+h3 {
+	font-family: "Open Sans", sans-serif;
+}
+// Gradient provided by @ https://uigradients.com/#MoonlitAsteroid
+.landing-banner {
+	background: #e0eafc;
+	background: linear-gradient(to right, #cfdef3, #e0eafc);
+	margin-top: -20px;
+}
+
+.navbar {
+	background: #0f2027; /* fallback for old browsers */
+	background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+}
+
+.navbar-brand {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 800;
+}
+
+body .navbar-light .navbar-nav .nav-link {
+	color: white;
+
+	&:hover {
+		color: greenyellow;
+		opacity: 0.8;
+	}
+}
+
+.navbar-light .navbar-toggler {
+	color: white;
+	border: 2px solid #f5f5f5;
+
+	&:hover,
+	&:focus {
+		color: whitesmoke;
+		opacity: 0.75;
+	}
+}
+
+.jumbotron {
+	background-image: url("//wallpoper.com/images/00/31/33/51/black-background_00313351.jpg");
+	color: #fff;
+}
