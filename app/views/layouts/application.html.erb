@@ -40,6 +40,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Tech</a>
           </li>
+          <li class="nav-item">
+            <%= link_to "Write An Article",    new_article_path, class: "nav-link" %>
+          </li>
         </ul>
         <form class="form-inline my-2 my-lg-0 ml-auto">
           <% if user_signed_in? %>

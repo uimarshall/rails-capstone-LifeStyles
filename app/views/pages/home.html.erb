@@ -3,6 +3,17 @@
     <h1 class="display-3">Welcome To *Life'n'Style*</h1>
     <p class="lead">We are Life'n'Style. Our company is commited to building a community of happy  and lively people who takes time out to express life and style..., We are constantly evolving and tramsitting positive vibes to meet your needs.</p>
     <hr class="my-2">
+    <h1>All Articles</h1>
+    <ul id="articles">
+      <% @articles.each do |article| %>
+        <li>
+          <%= article.title %>
+        </li>
+        <li>
+          <%= article.text %>
+        </li>
+      <% end %>
+    </ul>
     <p>More info</p>
     <p class="lead">
       <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Check this out</a>
