@@ -20,3 +20,4 @@ def create
   end
 
   I had to add has_many :votes_count, through: :votes, source: :article
+  rails g scaffold Category name:string priority:integer
