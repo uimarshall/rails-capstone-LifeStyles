@@ -13,6 +13,10 @@
     <%= f.text_area :text %>
   </p>
   <p>
+    <%= f.label :category %><br />
+    <%= f.select :category_id, Category.all.map{|cat|[cat.name,cat.id]} %>
+  </p>
+  <p>
     <%= f.submit %>
   </p>
 <% end %>
