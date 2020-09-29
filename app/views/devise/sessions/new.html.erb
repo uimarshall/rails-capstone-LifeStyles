@@ -12,6 +12,10 @@
               <%= f.label :username %><br />
               <%= f.text_field :username, autofocus: true, class: "form-control" %>
             </div>
+            <div class="field form-group">
+              <%= f.label :password %><br />
+              <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+            </div>
             <div class="actions">
               <%= f.submit "Log in", class: 'form-control btn btn-info btn-block' %>
             </div>

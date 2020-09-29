@@ -1,4 +1,4 @@
-<%= form_for(@article) do |f| %>
+<%= form_for @article, url: articles_path,  html: { multipart: true } do |f| %>
   <ul>
     <% @article.errors.full_messages.each do |error| %>
       <li><%= error %></li>
@@ -16,6 +16,10 @@
     <%= f.label :category %><br />
     <%= f.select :category_id, Category.all.map{|cat|[cat.name,cat.id]} %>
   </p>
+  <div class="field form-group">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar, class: "form-control" %>
+  </div>
   <p>
     <%= f.submit %>
   </p>

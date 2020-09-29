@@ -29,12 +29,12 @@ class User < ApplicationRecord
   def will_save_change_to_email?
     false
   end
-   def self.find_for_database_authentication warden_condition
-    conditions = warden_condition.dup
-    login = conditions.delete(:login)
-    where(conditions).where(
-      ["lower(username) = :value OR lower(email) = :value",
-      { value: login.strip.downcase}]).first
-  end
+  #  def self.find_for_database_authentication warden_condition
+  #   conditions = warden_condition.dup
+  #   login = conditions.delete(:login)
+  #   where(conditions).where(
+  #     ["lower(username) = :value",
+  #     { value: login.strip.downcase}]).first
+  # end
      
 end

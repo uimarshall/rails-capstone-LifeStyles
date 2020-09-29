@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @category_articles = @category.articles.order('id DESC').limit(4)
   end
 
   # GET /categories/new
