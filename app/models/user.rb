@@ -1,12 +1,11 @@
 class User < ApplicationRecord
   attr_accessor :login
 
-  
   # Don't include 'validatable', if you don't want to validate users
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable,:validatable
+         :recoverable, :rememberable, :validatable
   has_many :votes, dependent: :destroy
 
   has_many :articles
@@ -17,6 +16,7 @@ class User < ApplicationRecord
   def email_changed?
     false
   end
+
   def password_required?
     false
   end
@@ -24,7 +24,7 @@ class User < ApplicationRecord
   def password_changed?
     false
   end
-  
+
   # use this instead of email_changed? for Rails = 5.1.x
   def will_save_change_to_email?
     false
@@ -36,5 +36,4 @@ class User < ApplicationRecord
   #     ["lower(username) = :value",
   #     { value: login.strip.downcase}]).first
   # end
-     
 end
