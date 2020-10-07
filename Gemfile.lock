@@ -77,12 +77,6 @@ GEM
     climate_control (0.2.0)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
-    devise (4.7.3)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 4.1.0)
-      responders
-      warden (~> 1.2.3)
     erubi (1.9.0)
     ffi (1.13.1-x64-mingw32)
     figaro (1.2.0)
@@ -116,7 +110,6 @@ GEM
     nio4r (2.5.4)
     nokogiri (1.10.10-x64-mingw32)
       mini_portile2 (~> 2.4.0)
-    orm_adapter (0.5.0)
     paperclip (6.1.0)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
@@ -165,9 +158,6 @@ GEM
     rainbow (3.0.0)
     rake (13.0.1)
     regexp_parser (1.8.0)
-    responders (3.0.1)
-      actionpack (>= 5.0)
-      railties (>= 5.0)
     rexml (3.2.4)
     rubocop (0.81.0)
       jaro_winkler (~> 1.5.1)
@@ -212,8 +202,6 @@ GEM
     tzinfo-data (1.2020.1)
       tzinfo (>= 1.0.0)
     unicode-display_width (1.7.0)
-    warden (1.2.9)
-      rack (>= 2.0.9)
     web-console (4.0.4)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -238,10 +226,10 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-  devise (~> 4.2)
   figaro (~> 1.2)
   font-awesome-rails (~> 4.7, >= 4.7.0.5)
   hirb (~> 0.7.3)

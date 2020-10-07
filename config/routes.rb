@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
+  
   root to: "pages#home"
+  resources :users, only: [:new, :create]
   # root to: "articles#index"
-  devise_for :users
-  devise_scope :user do
-  get '/users/sign_out' => 'devise/sessions#destroy'
-end
+  
   resources :categories
   # resources :users do
   #   resources :articles

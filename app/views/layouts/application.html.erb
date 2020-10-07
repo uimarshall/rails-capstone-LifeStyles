@@ -45,23 +45,23 @@
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0 ml-auto">
-          <% if user_signed_in? %>
-            <%= link_to "Log Out",  destroy_user_session_path, method: :delete, class: "nav-link btn btn-outline-success my-2 my-sm-0 mr-3" %>
-          <% else %>
-            <%= link_to "Log In",  new_user_session_path, class: "nav-link btn btn-outline-success my-2 my-sm-0 mr-3" %>
-            <%= link_to "Register",   new_user_registration_path, class: "nav-link btn btn-outline-info my-2 my-sm-0" %>
-          <% end %>
-          <%= link_to root_path, class: "nav-link"  do %>
-            <i class="fa fa-search" aria-hidden="true"></i>
-          <% end %>
-        </form>
+          <%# <!-- <% if user_signed_in? %>
+          <%# <%= link_to "Log Out",  destroy_user_session_path, method: :delete, class: "nav-link btn btn-outline-success my-2 my-sm-0 mr-3" %> %>
+          <%# <% else %> %>
+          <%# <%= link_to "Log In",  new_user_session_path, class: "nav-link btn btn-outline-success my-2 my-sm-0 mr-3" %> %>
+          <%# <%= link_to "Register",   new_user_registration_path, class: "nav-link btn btn-outline-info my-2 my-sm-0" %> %>
+          <%# <% end %> %>
+          <%# <%= link_to root_path, class: "nav-link"  do %> %>
+            <%# <i class="fa fa-search" aria-hidden="true"></i> %>
+            <%# <% end %> --> %> %>
+          </form>
+        </div>
+      </nav>
+      <div class="container">
+        <% flash.each do | type, msg | %>
+          <%= content_tag :div, msg, class: "mt-3 alert alert-#{type}" %>
+        <%end%>
       </div>
-    </nav>
-    <div class="container">
-      <% flash.each do | type, msg | %>
-        <%= content_tag :div, msg, class: "mt-3 alert alert-#{type}" %>
-      <%end%>
-    </div>
-    <%= yield %>
-  </body>
-</html>
+      <%= yield %>
+    </body>
+  </html>

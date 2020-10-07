@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -36,7 +36,7 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'hirb', '~> 0.7.3'
 
 # Use Devise for user authentication
-gem 'devise', '~> 4.2'
+# gem 'devise', '~> 4.2'
 
 # Use figaro to set ENV variables
 gem 'figaro', '~> 1.2'

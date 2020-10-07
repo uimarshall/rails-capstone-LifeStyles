@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
   def create
     # @article = Article.create(article_params)
     # Ensure we have the user filling out the form
-    @user = User.find(params[:user_id])
+    @user = User.find(params[user_id:author_id])
     @article = @user.articles.build(article_params)
 
     if @article.save
