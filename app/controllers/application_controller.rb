@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  #   helper_method simply makes the passed in arguments available as helper methods in the views.
+  #   This means we can call both current_user and logged_in? from the views.
+  helper_method :current_user, :logged_in?
+  before_action :set_nav_categories
 
   def login(user)
     session[:user_id] = user.id
@@ -17,7 +21,8 @@ class ApplicationController < ActionController::Base
   def logged_in?
     current_user.nil? ? false : true
   end
-  #   helper_method simply makes the passed in arguments available as helper methods in the views.
-  #   This means we can call both current_user and logged_in? from the views.
-  helper_method :current_user, :logged_in?
+
+  def set_nav_categories
+    @nav_categories = Category.order(:priority).limit(4)
+  end
 end

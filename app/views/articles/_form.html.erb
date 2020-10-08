@@ -1,3 +1,4 @@
+<!--<div>
 <%= form_for @article, url: articles_path,  html: { multipart: true } do |f| %>
   <ul>
     <% @article.errors.full_messages.each do |error| %>
@@ -23,4 +24,30 @@
   <p>
     <%= f.submit %>
   </p>
+<% end %>
+</div>-->
+<%= form_with(model: article, local: true) do |form| %>
+  <%= render 'shared/errors', object: form.object %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control', autofocus: true %>
+  </div>
+  <div class="field">
+    <%= form.label :text %>
+    <%= form.text_area :text, class: 'h5 font-weight-bold form-control' %>
+  </div>
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, class: 'custom-btn' %>
+  </div>
+  <div class="field">
+    <%= form.hidden_field :image_cache%>
+  </div>
+  <div class="field">
+    <%= form.label :category_id, 'Category' %>
+    <%= form.collection_select :category_id, Category.order(:name), :id, :name %>
+  </div>
+  <div class="actions">
+    <%= form.submit class: 'custom-btn' %>
+  </div>
 <% end %>

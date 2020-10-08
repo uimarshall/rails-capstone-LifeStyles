@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
   
-  get 'sessions/new'
   root to: "pages#home"
+   resources :categories
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection
   end
+
+  resources :articles do
+    resources :comments, only: [:create]
+    resources :votes, only: [:create, :destroy]
+  end
   # root to: "articles#index"
   
-  resources :categories
+  # resources :categories
   # resources :users do
   #   resources :articles
     
@@ -17,7 +22,7 @@ Rails.application.routes.draw do
   # get 'articles/new'
   # get 'articles/show'
   
-  resources :articles
+  # resources :articles
   
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
-  # before_action :set_article, only: %i[show destroy create]
+  before_action :set_article, only: %i[show destroy]
+  before_action :set_current_user
 
   def index
-    # @articles = Article.all
     @articles = Article.all
     @featured = Article.featured_article
     @categories = Category.order(:priority).limit(4).includes(:articles)
@@ -12,22 +12,17 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  def show
-    @article = Article.find(params[:id])
-  end
-
   def create
-    # @article = Article.create(article_params)
-    # Ensure we have the user filling out the form
-    @user = User.find(params[user_id: author_id])
-    @article = @user.articles.build(article_params)
+    @article = @current_user.articles.build(article_params)
 
-    if @article.save
-      flash[:success] = 'Article Successfully created'
-      redirect_to @article # we need to pass in an 'id' bcos of the URI '/users/:id'
-    else
-      render action: :new
-
+    respond_to do |format|
+      if @article.save
+        # Create article-categories using the category_id and article_id saved
+        ArticleCategory.create(category_id: article_params[:category_id], article_id: @article.id)
+        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+      else
+        format.html { render :new }
+      end
     end
   end
 
@@ -40,10 +35,11 @@ class ArticlesController < ApplicationController
 
   private
 
-  #  def set_article
-  #   @article = Article.find(params[:id])
-  # end
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
   def article_params
-    params.require(:article).permit(:title, :text, :category_id, :avatar)
+    params.require(:article).permit(:title, :text, :image, :category_id)
   end
 end
