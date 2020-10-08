@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :articles, class_name: 'Article', foreign_key: 'author_id'
   validates :username,
             presence: true,
             length: { minimum: 3 },
