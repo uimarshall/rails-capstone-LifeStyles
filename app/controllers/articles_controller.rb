@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show destroy]
-  before_action :set_current_user
+  before_action :current_user
 
   def index
     @articles = Article.all
@@ -11,6 +11,8 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
   end
+
+  def edit; end
 
   def create
     @article = @current_user.articles.build(article_params)

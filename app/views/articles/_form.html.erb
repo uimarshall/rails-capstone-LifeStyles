@@ -26,28 +26,32 @@
   </p>
 <% end %>
 </div>-->
-<%= form_with(model: article, local: true) do |form| %>
-  <%= render 'shared/errors', object: form.object %>
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: 'form-control', autofocus: true %>
+<div class="card">
+  <div class="card-header text-center h2 text-muted">
+    Life'n'Style
   </div>
-  <div class="field">
-    <%= form.label :text %>
-    <%= form.text_area :text, class: 'h5 font-weight-bold form-control' %>
+  <div class="card-body">
+    <%= form_with(model: @article, local: true) do |form| %>
+      <%= render 'shared/errors', object: form.object %>
+      <div class="field form-group">
+        <%= form.label :title %>
+        <%= form.text_field :title, class: 'form-control', autofocus: true %>
+      </div>
+      <div class="field form-group">
+        <%= form.label :text %>
+        <%= form.text_area :text, class: 'h5 font-weight-bold form-control' %>
+      </div>
+      <div class="field form-group">
+        <%= form.label :image %>
+        <%= form.file_field :image, class: 'btn btn-secondary btn-block' %>
+      </div>
+      <div class="form-group">
+        <%= form.label :category_id, 'Category' %>
+        <%= form.collection_select :category_id, Category.order(:name), :id, :name, {},{class: "form-control"} %>
+      </div>
+      <div class="actions">
+        <%= form.submit class: 'form-control btn btn-info btn-block' %>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image, class: 'custom-btn' %>
-  </div>
-  <div class="field">
-    <%= form.hidden_field :image_cache%>
-  </div>
-  <div class="field">
-    <%= form.label :category_id, 'Category' %>
-    <%= form.collection_select :category_id, Category.order(:name), :id, :name %>
-  </div>
-  <div class="actions">
-    <%= form.submit class: 'custom-btn' %>
-  </div>
-<% end %>
+</div>

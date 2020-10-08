@@ -1,5 +1,23 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
-<h1><%= @article.title %></h1>
-<p><%= @article.text %></p>
-<h1>Category: <%= @article.category.name %></h1>
+<div class="container">
+  <h1 class="theme-color text-center"><%= @article.title %></h1>
+  <div class="col-md-12">
+    <div class="col-md-6 mb-100">
+      <p>Category: <%= @article.categories[0].name %></p>
+      <p>
+        <h6 class="theme-color">
+          <%= number_of_votes(@article) %>
+          <span> for this article</span>
+        </h6>
+      </p>
+      <p class="text-center">
+        <%= image_tag(@article.image) %>
+      </p>
+      <p><%= @article.text %></p>
+      <div>
+        <%= vote_button(@article) if @current_user %><br />
+        <%= link_to 'Edit | ', edit_article_path(@article) if @current_user %>
+        <%= link_to 'Back', articles_path %>
+      </div>
+    </div>
+  </div>
+</div>
