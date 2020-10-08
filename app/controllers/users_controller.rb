@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       # Save the user created to session for something later
       # We call the key 'user_id' stored in the session hash
       session[:user_id] = @user.id
-      redirect_back fallback_location: root
+      redirect_back(fallback_location: root_path)
 
     else
       flash[:errors] = @user.errors.full_messages

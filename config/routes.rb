@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'sessions/new'
   root to: "pages#home"
   resources :users, only: [:new, :create]
+  resources :sessions, only: [:new, :create] do
+    delete :destroy, on: :collection
+  end
   # root to: "articles#index"
   
   resources :categories
