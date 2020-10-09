@@ -1,31 +1,3 @@
-<!--<div>
-<%= form_for @article, url: articles_path,  html: { multipart: true } do |f| %>
-  <ul>
-    <% @article.errors.full_messages.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-  </ul>
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :text %><br />
-    <%= f.text_area :text %>
-  </p>
-  <p>
-    <%= f.label :category %><br />
-    <%= f.select :category_id, Category.all.map{|cat|[cat.name,cat.id]} %>
-  </p>
-  <div class="field form-group">
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar, class: "form-control" %>
-  </div>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-</div>-->
 <div class="card">
   <div class="card-header text-center h2 text-muted">
     Life'n'Style

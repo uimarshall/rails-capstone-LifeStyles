@@ -1,14 +1,29 @@
-<p id="notice"><%= notice %></p>
-
-<p>
+<%# <p id="notice"><%= notice %></p>
+<%# <p>
   <strong>Name:</strong>
   <%= @category.name %>
 </p>
-
-<p>
+%>
+<%# <p>
   <strong>Priority:</strong>
   <%= @category.priority %>
 </p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+%> %>
+<%# <%= link_to 'Edit', edit_category_path(@category) %> | %>
+<%# <%= link_to 'Back To Categories', categories_path %> %>
+<div class="grid-c">
+  <% @category_articles.each_with_index do |article, index| %>
+    <div>
+      <%= odd_article_image(index, article) %>
+      <div class="content">
+        <p class="theme-color"><%= @category.name %></p>
+        <p><%= link_to category_article_title(article), article_path(article), class: 'nav-theme underline' %></p>
+        <p><%= category_article_text(article) %></p>
+        <p>Author: <%= author_name(article) %></p>
+        <span class="theme-color"><%= number_of_votes(article) %> </span>
+        &nbsp; <%= vote_button(article) if @current_user %><br />
+      </div>
+      <%= even_article_image(index, article) %>
+    </div>
+  <% end %>
+</div>

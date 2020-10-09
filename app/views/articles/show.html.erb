@@ -14,9 +14,8 @@
       </p>
       <p><%= @article.text %></p>
       <div>
-        <%= vote_button(@article) if @current_user %><br />
-        <%= link_to 'Edit | ', edit_article_path(@article) if @current_user %>
-        <%= link_to 'Back', articles_path %>
+        <%= vote_button(@article) if @current_user  %><br />
+        <%= link_to 'Back To Articles', articles_path %>
       </div>
     </div>
   </div>

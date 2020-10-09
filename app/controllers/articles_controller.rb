@@ -28,6 +28,19 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def update
+    respond_to do |format|
+      if @article.update(article_params)
+        article_category = ArticleCategory.where(article_id: @article.id)
+        article_category[0].category_id = article_params[:category_id]
+        article_category[0].save
+        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
   def destroy
     @article.destroy
     respond_to do |format|

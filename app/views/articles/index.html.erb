@@ -1,10 +1,10 @@
 <h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
 <div class="mother-feature">
-  <div class="col-md-3 text-center">
-    <%# <%= image_tag @user.article.avatar.url(:thumb), class: 'avatar-img' %> %>
+  <div class="featured" style="background-image: url(<%= featured_image(@featured) %>);">
+    <p class="theme-color feature-title"> <%= featured_title_link(@featured) %></p>
+    <p class="feature-text"> <%= featured_content(@featured) %></p>
   </div>
-  <!--<div class="grid-h">
+  <div class="grid-h">
     <% @categories.each do |category| %>
       <div class='category'
              style="background-image: url(<%= latest_article_background(category) %>);">
@@ -12,19 +12,5 @@
         <span> <%= category_article_link(category) %></span>
       </div>
     <% end %>
-  </div> -->
-  <h1>All Articles</h1>
-  <ul id="articles">
-    <% @articles.each do |article| %>
-      <li>
-        <%= article.title %>
-      </li>
-      <li>
-        <%= article.text %>
-      </li>
-    <% end %>
-  </ul>
-  <% @categories.each do |category| %>
-    <%= link_to category.name, articles_path(:cat => category.id) %>
-  <% end %>
+  </div>
 </div>

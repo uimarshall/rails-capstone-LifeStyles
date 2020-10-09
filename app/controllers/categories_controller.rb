@@ -28,6 +28,16 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def update
+    respond_to do |format|
+      if @category.update(category_params)
+        format.html { redirect_to @category, notice: 'Category was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
   def destroy
     @category.destroy
     respond_to do |format|

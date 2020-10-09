@@ -6,7 +6,7 @@ class Article < ApplicationRecord
   has_many :votes, foreign_key: 'article_id', class_name: 'Vote', dependent: :destroy
   has_one_attached :image
   validates_presence_of :title, :text, :author_id, :image
-  validates_length_of :title, :text, { minimum: 5 }
+  validates_length_of :title, :text, { minimum: 3 }
 
   def self.featured_article
     return unless Vote.any?

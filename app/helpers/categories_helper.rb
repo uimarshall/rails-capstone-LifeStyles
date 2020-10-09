@@ -30,7 +30,7 @@ module CategoriesHelper
     article_image = ''
 
     article_image << content_tag(:div, '', class: 'article-img',
-                                           style: "background-image: url(#{article.image.category_show.url}")
+                                           style: "background-image: url_for(#{article.image}")
 
     article_image.html_safe if index.odd?
   end
@@ -39,7 +39,7 @@ module CategoriesHelper
     article_image = ''
 
     article_image << content_tag(:div, '', class: 'article-img',
-                                           style: "background-image: url(#{article.image.category_show.url}")
+                                           style: "background-image: url(#{article.image}")
 
     article_image.html_safe if index.even?
   end

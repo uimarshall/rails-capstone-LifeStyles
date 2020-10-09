@@ -2,10 +2,12 @@ class VotesController < ApplicationController
   before_action :current_user
 
   def create
+    @article = Article.find_by(id: params[:article_id])
     @vote = @current_user.votes.new(article_id: params[:article_id])
 
     if @vote.save
-      redirect_to :back, notice: 'You voted for an article'
+      # redirect_to :back, notice: 'You voted for an article'
+      redirect_to @article, notice: 'You voted for an article'
     else
       redirect_to request.referrer, alert: 'You unvoted an article'
     end
