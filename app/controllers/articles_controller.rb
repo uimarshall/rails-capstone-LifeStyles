@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  include ActionController::Serialization
   before_action :set_article, only: %i[show destroy]
   before_action :current_user
 

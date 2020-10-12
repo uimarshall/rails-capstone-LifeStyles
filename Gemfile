@@ -42,7 +42,8 @@ gem 'hirb', '~> 0.7.3'
 gem 'figaro', '~> 1.2'
 
 # Use paperclip for image upload
-gem 'paperclip', '~> 6.1'
+# gem 'paperclip', '~> 6.1'
+gem 'active_model_serializers', '~> 0.10.10'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

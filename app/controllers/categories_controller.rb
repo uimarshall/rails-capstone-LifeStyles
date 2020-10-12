@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  include ActionController::Serialization
   before_action :set_category, only: %i[show edit update destroy]
   before_action :current_user
 

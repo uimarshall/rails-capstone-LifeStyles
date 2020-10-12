@@ -20,7 +20,7 @@ module ArticlesHelper
   end
 
   def latest_article_background(category)
-    category.articles.last.image.to_s.html_safe if category.articles.any?
+    category.articles.last.image if category.articles.any?
   end
 
   def featured_title_link(article)
