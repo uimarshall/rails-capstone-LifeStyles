@@ -1,5 +1,5 @@
 <h1>Articles#index</h1>
-<div class="mother-feature">
+<div class="">
   <div class="featured" style="background-image: url(<%= featured_image(@featured) %>);">
     <p class="theme-color feature-title"> <%= featured_title_link(@featured) %></p>
     <p class="feature-text"> <%= featured_content(@featured) %></p>
@@ -7,7 +7,7 @@
   <div class="grid-h">
     <% @categories.each do |category| %>
       <div class='category'
-             style="background-image: url(<%= latest_article_background(category) %>);">
+             style="background-image: url(<%= rails_blob_url(category.articles.collect(&:image).detect(&:attached?))%>)">
         <p> <%= link_to category.name, category_path(category) %></p>
         <span> <%= category_article_link(category) %></span>
       </div>

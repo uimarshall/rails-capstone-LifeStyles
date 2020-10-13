@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    logout
+    logout(params[:id])
     redirect_back fallback_location: new_session_path, notice: 'Logged out'
   end
 

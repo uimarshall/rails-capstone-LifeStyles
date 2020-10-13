@@ -46,7 +46,7 @@
         </ul>
         <form class="form-inline my-2 my-lg-0 ml-auto">
           <% if logged_in? %>
-            <%= link_to "Log Out",  session_path("current"), method: :delete, class: "nav-link btn btn-outline-success my-2 my-sm-0 mr-3" %>
+            <%= button_to "Log Out",  sessions_path, method: :delete, class: "nav-link btn btn-outline-success my-2 my-sm-0 mr-3" %>
           <% else %>
             <%= link_to "Log In",  new_session_path, class: "nav-link btn btn-outline-success my-2 my-sm-0 mr-3" %>
             <%= link_to "Register",   new_user_path, class: "nav-link btn btn-outline-info my-2 my-sm-0" %>

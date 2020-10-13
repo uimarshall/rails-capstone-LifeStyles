@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :users
   # resources :users, only: [:new, :create]
-   resources :sessions, only: [:new, :create, :destroy]
+   resources :sessions, only: [:new, :create]
   # resources :sessions, only: [:new, :create] do
   #   delete :destroy, on: :collection
   # end
@@ -14,6 +14,6 @@ Rails.application.routes.draw do
    
     resources :votes, only: [:create, :destroy]
   end
-  
+  # get "log_out" => "sessions#destroy"
   
 end
