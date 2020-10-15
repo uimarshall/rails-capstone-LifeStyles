@@ -45,14 +45,14 @@
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0 ml-auto">
-          <% if logged_in? %>
-            <%= button_to "Log Out",  sessions_path, method: :delete, class: "nav-link btn btn-outline-success my-2 my-sm-0 mr-3" %>
-          <% else %>
-            <%= link_to "Log In",  new_session_path, class: "nav-link btn btn-outline-success my-2 my-sm-0 mr-3" %>
+          <% if @current_user.nil? %>
+            <%= link_to "Log In",  sessions_path, class: "nav-link btn btn-outline-success my-2 my-sm-0 mr-3" %>
             <%= link_to "Register",   new_user_path, class: "nav-link btn btn-outline-info my-2 my-sm-0" %>
             <%= link_to root_path, class: "nav-link"  do %>
               <i class="fa fa-search" aria-hidden="true"></i>
             <% end %>
+          <% else %>
+            <%= link_to "Log Out",  logout_path, method: :delete, data: {:confirm => 'Are you sure?'}, class: "nav-link btn btn-outline-success my-2 my-sm-0 mr-3" %>
           <% end %>
         </form>
       </div>
