@@ -12,7 +12,7 @@
         <span> <%= category_article_link(category) %></span>
       </div>
       <p class="text-center">
-        <%= (category.articles.inspect) %>
+        <%# <%= (category.articles.inspect) %> %>
         <%# <%= image_tag (category.articles.image) %> %>
         <%= image_tag category.articles.collect(&:image).detect(&:attached?) %>);
       </p>

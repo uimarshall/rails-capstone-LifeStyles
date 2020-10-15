@@ -8,6 +8,7 @@ class VotesController < ApplicationController
     if @vote.save
       # redirect_to :back, notice: 'You voted for an article'
       redirect_to @article, notice: 'You voted for an article'
+      # render @article
     else
       redirect_to request.referrer, alert: 'You unvoted an article'
     end
