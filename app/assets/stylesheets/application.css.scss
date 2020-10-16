@@ -19,46 +19,263 @@
 h1,
 h2,
 h3 {
-  font-family: "Open Sans", sans-serif;
+	font-family: "Open Sans", sans-serif;
 }
 // Gradient provided by @ https://uigradients.com/#MoonlitAsteroid
 .landing-banner {
-  background: #e0eafc;
-  background: linear-gradient(to right, #cfdef3, #e0eafc);
-  margin-top: -20px;
+	background: #e0eafc;
+	background: linear-gradient(to right, #cfdef3, #e0eafc);
+	margin-top: -20px;
 }
 
 .navbar {
-  background: #0f2027; /* fallback for old browsers */
-  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+	background: #0f2027; /* fallback for old browsers */
+	background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
 }
 
 .navbar-brand {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 800;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 800;
 }
 
 body .navbar-light .navbar-nav .nav-link {
-  color: white;
+	color: white;
 
-  &:hover {
-    color: greenyellow;
-    opacity: 0.8;
-  }
+	&:hover {
+		color: greenyellow;
+		opacity: 0.8;
+	}
 }
 
 .navbar-light .navbar-toggler {
-  color: white;
-  border: 2px solid #f5f5f5;
+	color: white;
+	border: 2px solid #f5f5f5;
 
-  &:hover,
-  &:focus {
-    color: whitesmoke;
-    opacity: 0.75;
-  }
+	&:hover,
+	&:focus {
+		color: whitesmoke;
+		opacity: 0.75;
+	}
 }
 
-.jumbotron {
-  background-image: url("//wallpoper.com/images/00/31/33/51/black-background_00313351.jpg");
-  color: #fff;
+// .jumbotron {
+// 	background-image: url("//wallpoper.com/images/00/31/33/51/black-background_00313351.jpg");
+// 	color: #fff;
+// }
+
+body {
+	min-width: 1024px;
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+ul {
+	list-style-type: none;
+}
+
+main {
+	padding-bottom: 4.5rem;
+}
+
+.mb-100 {
+	margin-bottom: 100px;
+}
+
+.mt-100 {
+	margin-top: 100px;
+}
+
+.tag a {
+	padding: 1px;
+	margin: 2px;
+	border: 1px solid #4e453f;
+	border-radius: 30%;
+	color: #fe6001;
+}
+
+.tag-articles {
+	margin: 20px auto;
+	color: #000;
+}
+
+.page {
+	position: relative;
+	min-height: 100vh;
+}
+
+footer {
+	background-color: #4e453f;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 4.5rem;
+}
+
+.flex-h {
+	display: flex;
+}
+
+.grid-h,
+.grid-c {
+	display: grid;
+	grid-template-columns: repeat(4, 25%);
+	height: 100vh;
+	margin-bottom: 0;
+}
+
+.grid-h {
+	height: 50vh;
+}
+
+.logo {
+	text-shadow: 0 2px 5px #aa2525;
+	color: #fff;
+	font-size: 3rem;
+	margin-left: 20px;
+}
+
+.nav-theme {
+	color: #000;
+	font-weight: 600;
+}
+
+.nav-margin {
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+nav.navbar.navbar-default {
+	margin-bottom: 0;
+}
+
+.theme-color {
+	font-weight: 400;
+	color: #fe6001;
+}
+
+.link-title {
+	font-weight: 600;
+	color: #fff;
+}
+
+.article-img {
+	height: 50vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.content {
+	margin: 0 20px;
+	height: 50vh;
+}
+
+.nav_link {
+	a {
+		color: #000;
+	}
+}
+
+.featured {
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 50vh;
+}
+
+.mother-feature {
+	height: 100vh;
+}
+
+.feature-title {
+	padding-top: 200px;
+	padding-left: 30px;
+	font-size: 2rem;
+}
+
+.feature-text {
+	padding-left: 30px;
+	color: #fff;
+	font-size: 2rem;
+}
+
+.formbox {
+	width: 350px;
+	margin: auto;
+	border: 1px solid #fe6001;
+	padding: 10px 40px 40px;
+	border-radius: 5px;
+}
+
+.footer-info {
+	padding: 0;
+	margin-left: 20px;
+
+	li {
+		margin: 10px;
+
+		a {
+			color: #000;
+		}
+	}
+}
+
+.category {
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	p {
+		color: #fff;
+		font-weight: 600;
+		font-size: 2rem;
+		margin-top: 40px;
+
+		a {
+			color: #fff;
+			margin-left: 30px;
+			margin-top: 30px;
+			padding-bottom: 5px;
+			font-weight: 600;
+			border-bottom: 2px solid #cff32d;
+		}
+
+		a:hover {
+			text-decoration: none;
+			cursor: pointer;
+		}
+	}
+
+	span {
+		color: #fff;
+		margin-left: 30px;
+		font-weight: 600;
+		font-size: 1.6rem;
+		position: fixed;
+		bottom: 100px;
+	}
+}
+
+.commentbox {
+	margin-bottom: 60px;
+}
+
+.underline {
+	border-bottom: 2px solid #cff32d;
+}
+
+.field {
+	margin: 20px auto;
+}
+
+.social-icons {
+	border-radius: 100%;
+	border: 1px solid #fe6001;
+	font-size: 1rem;
+	background-color: #fe6001;
+	padding: 3px;
+}
+
+.rules {
+	color: #fe6001;
+}
+
+.text-white {
+	color: #fff;
 }

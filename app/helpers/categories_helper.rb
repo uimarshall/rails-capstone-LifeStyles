@@ -13,7 +13,7 @@ module CategoriesHelper
   def category_article_title(article)
     article.title.truncate(27)
   end
-
+# @articles.collect(&:image).detect(&:attached?)
   def category_article_text(article)
     article.text.truncate(100, separator: ' ', omission: '.... (continued)')
   end
@@ -30,7 +30,7 @@ module CategoriesHelper
     article_image = ''
 
     article_image << content_tag(:div, '', class: 'article-img',
-                                           style: "background-image: url_for(#{article.image}")
+                                           style: "background-image: url(#{article.image}")
 
     article_image.html_safe if index.odd?
   end
