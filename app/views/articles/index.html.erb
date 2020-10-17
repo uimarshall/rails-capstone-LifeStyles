@@ -1,5 +1,4 @@
-<h1>Articles#index</h1>
-<div class="">
+<div class="feature-wrapper">
   <% if @articles.collect(&:image).detect(&:attached?) %>
     <div class="featured" style="background-image: url(<%= rails_blob_url(@featured.image) %>);">
       <p class="theme-color feature-title"> <%= featured_title_link(@featured) %></p>
@@ -14,11 +13,6 @@
           <p> <%= link_to category.name, category_path(category) %></p>
           <span> <%= category_article_link(category) %></span>
         </div>
-        <p class="text-center">
-          <%# <%= (category.articles.inspect) %>
-          <%# <%= image_tag (category.articles.image) %>
-          <%# <%= image_tag category.articles.collect(&:image).detect(&:attached?) %>
-        </p>
       <% end %>
     <% end %>
   </div>
