@@ -25,5 +25,6 @@ def create
   heroku login
   heroku create
   heroku apps:rename entrelab
+  git remote -v #to check if the name has changed
   bundle install --without production
   git push heroku develop:master
