@@ -1,5 +1,4 @@
 class Article < ApplicationRecord
-
   attr_accessor :category_id
   belongs_to :user, class_name: 'User', foreign_key: 'author_id'
   has_many :article_categories, foreign_key: 'article_id'
@@ -16,9 +15,8 @@ class Article < ApplicationRecord
     article_id = Vote.group(:article_id).count.max_by { |_k, v| v }.first
     Article.find(article_id)
   end
+
   def thumbnail
-    return self.image.variant(resize: '390x280!').processed
-    
+    image.variant(resize: '390x280!').processed
   end
-  
 end

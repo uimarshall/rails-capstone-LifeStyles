@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    
+
     if @user.save
       # Save the user created to session for something later
       # We call the key 'user_id' stored in the session hash

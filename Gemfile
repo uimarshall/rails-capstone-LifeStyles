@@ -65,8 +65,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 group :production do
-  gem 'pg'
- 
+  # gem 'pg'
 end
 
 group :test do

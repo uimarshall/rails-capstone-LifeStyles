@@ -24,6 +24,6 @@ module ArticlesHelper
   end
 
   def featured_title_link(article)
-    link_to(featured_title(article), article_path(article), class: 'link-title underline') if article
+    link_to(featured_title(article), article_path(article), class: 'link-title') if article
   end
 end

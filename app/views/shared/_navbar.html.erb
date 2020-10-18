@@ -5,33 +5,9 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <%# Home, Politics, Health, Education, Careers, Tech , Login, Register, search %>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <%= link_to "Home", root_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Politics</a>
-        <%# <%= link_to "Politics", category_path(@category), class: "nav-link"  %>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Health</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Education</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Careers</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Tech</a>
-      </li>
-      <li class="nav-item">
-        <% unless @current_user.nil? %>
-          <%= link_to "Write An Article",    new_article_path, class: "nav-link" %>
-        <% end %>
-      </li>
+      <%= nav_items(@nav_categories) %>
     </ul>
     <form class="form-inline my-2 my-lg-0 ml-auto">
       <% if @current_user.nil? %>

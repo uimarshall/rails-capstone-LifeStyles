@@ -13,7 +13,8 @@ module CategoriesHelper
   def category_article_title(article)
     article.title.truncate(27)
   end
-# @articles.collect(&:image).detect(&:attached?)
+
+  # @articles.collect(&:image).detect(&:attached?)
   def category_article_text(article)
     article.text.truncate(100, separator: ' ', omission: '.... (continued)')
   end

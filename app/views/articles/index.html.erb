@@ -1,16 +1,16 @@
 <div class="feature-wrapper">
   <% if @articles.collect(&:image).detect(&:attached?) %>
     <div class="featured" style="background-image: url(<%= rails_blob_url(@featured.image) %>);">
-      <p class="theme-color feature-title"> <%= featured_title_link(@featured) %></p>
+      <p class="feature-title"> <%= featured_title_link(@featured) %></p>
       <p class="feature-text"> <%= featured_content(@featured) %></p>
     </div>
   <% end %>
-  <div class="grid-h">
+  <div class="img-grid">
     <% @categories.each do |category| %>
       <% if category.articles.collect(&:image).detect(&:attached?) %>
         <div class='category'
              style="background-image: url(<%= rails_blob_url(category.articles.collect(&:image).detect(&:attached?))%>)">
-          <p> <%= link_to category.name, category_path(category) %></p>
+          <p> <%= link_to category.name, category_path(category), class:'text-white font-weight-bold px-2 border-bottom border-warning' %></p>
           <span> <%= category_article_link(category) %></span>
         </div>
       <% end %>

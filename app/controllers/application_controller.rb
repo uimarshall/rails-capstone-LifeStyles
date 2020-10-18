@@ -33,13 +33,6 @@ class ApplicationController < ActionController::Base
     flash[:alert] = 'Kindly log in first...'
     redirect_to sessions_path if session[:id].nil?
   end
-  def require_login?
-        # redirect to root page if session id is non existing
-        unless session[:user_id]
-            flash[:errors]=["You must login first"] 
-        redirect_to root_path 
-        end
-    end
 
   def set_nav_categories
     @nav_categories = Category.order(:priority).limit(4)

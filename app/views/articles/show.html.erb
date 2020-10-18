@@ -1,10 +1,10 @@
 <div class="container">
-  <h1 class="theme-color text-center"><%= @article.title %></h1>
+  <h1 class="main-text-color text-center"><%= @article.title %></h1>
   <div class="col-md-12">
     <div class="col-md-6 mb-100 text-center mx-auto">
       <p>Category: <%= @article.categories[0].name %></p>
       <p>
-        <h6 class="theme-color">
+        <h6 class="main-text-color">
           <%= number_of_votes(@article) %>
           <span> for this article</span>
         </h6>
