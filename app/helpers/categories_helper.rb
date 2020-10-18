@@ -26,22 +26,4 @@ module CategoriesHelper
     article = category.articles.last
     link_to(link_title, article_path(article), class: 'link-title underline')
   end
-
-  def odd_article_image(index, article)
-    article_image = ''
-
-    article_image << content_tag(:div, '', class: 'article-img',
-                                           style: "background-image: url(#{article.image}")
-
-    article_image.html_safe if index.odd?
-  end
-
-  def even_article_image(index, article)
-    article_image = ''
-
-    article_image << content_tag(:div, '', class: 'article-img',
-                                           style: "background-image: url(#{article.image}")
-
-    article_image.html_safe if index.even?
-  end
 end
