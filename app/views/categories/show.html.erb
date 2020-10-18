@@ -36,33 +36,3 @@
     </div>
   <% end %>
 </div>
-<%# ================================================================================== %>
-<!--<section class="portfolio container-fluid bg-light">
-  <% @category_articles.each_with_index do |article, index| %>
-    <div class="row">
-      <div class="col-md-3 p-0">
-        <div class="filter"></div>
-        <% if article.image.attached? %>
-          <%= image_tag(article.thumbnail) if index.odd? %>
-        <% end %>
-      </div>
-      <div class="col-md-3 dark d-flex align-items-center justify-content-center">
-        <div class="text-center">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title theme-color"><%= @category.name %></h5>
-              <h6 class="card-subtitle mb-2 text-muted"><%= link_to category_article_title(article), article_path(article), class: 'nav-theme underline' %></h6>
-              <p class="card-text"><%= category_article_text(article) %></p>
-              <p><%= link_to "Read More", article %> </p>
-              <span class="theme-color card-link"><%= number_of_votes(article) %> </span>
-              <%= vote_button(article) if @current_user  %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% if article.image.attached? %>
-        <%= image_tag(article.thumbnail) if index.even? %>
-      <% end %>
-    </div>
-  <% end %>
-</section>-->

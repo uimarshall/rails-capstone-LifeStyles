@@ -28,7 +28,9 @@
         <a class="nav-link" href="#">Tech</a>
       </li>
       <li class="nav-item">
-        <%= link_to "Write An Article",    new_article_path, class: "nav-link" %>
+        <% unless @current_user.nil? %>
+          <%= link_to "Write An Article",    new_article_path, class: "nav-link" %>
+        <% end %>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 ml-auto">

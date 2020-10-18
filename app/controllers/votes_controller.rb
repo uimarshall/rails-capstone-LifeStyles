@@ -3,6 +3,9 @@ class VotesController < ApplicationController
 
   def create
     @article = Article.find_by(id: params[:article_id])
+    if @current_user.votes.exists?(article_id: params[:article_id])
+      flash[:alert] = 'You have already voted for this article!'
+    else
     @vote = @current_user.votes.new(article_id: params[:article_id])
 
     if @vote.save
@@ -12,6 +15,7 @@ class VotesController < ApplicationController
     else
       redirect_to request.referrer, alert: 'You unvoted an article'
     end
+  end
   end
 
   def destroy

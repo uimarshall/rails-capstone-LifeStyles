@@ -22,4 +22,8 @@ def create
   I had to add has_many :votes_count, through: :votes, source: :article
   rails g scaffold Category name:string priority:integer
 
-  
+  heroku login
+  heroku create
+  heroku apps:rename entrelab
+  bundle install --without production
+  git push heroku develop:master

@@ -1,5 +1,4 @@
 class Article < ApplicationRecord
-  # require "mini_magick"
 
   attr_accessor :category_id
   belongs_to :user, class_name: 'User', foreign_key: 'author_id'
@@ -18,7 +17,7 @@ class Article < ApplicationRecord
     Article.find(article_id)
   end
   def thumbnail
-    return self.image.variant(resize: '385x280!').processed
+    return self.image.variant(resize: '390x280!').processed
     
   end
   

@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="theme-color text-center"><%= @article.title %></h1>
   <div class="col-md-12">
-    <div class="col-md-6 mb-100">
+    <div class="col-md-6 mb-100 text-center mx-auto">
       <p>Category: <%= @article.categories[0].name %></p>
       <p>
         <h6 class="theme-color">
@@ -12,7 +12,7 @@
       <p class="text-center">
         <%= image_tag(@article.image) %>
       </p>
-      <p><%= @article.text %></p>
+      <p class="text-left"><%= @article.text %></p>
       <div>
         <% if Vote.find_by(user: @current_user, article: @article) %>
           <%= form_with(url: article_vote_path(@article.id), method: :delete) do |form| %>
