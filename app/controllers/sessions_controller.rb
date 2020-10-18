@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def index; end
-  # def new; end
 
   def create
     @user = User.find_by(username: login_params[:username])
@@ -24,10 +23,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    # logout(params[:id])
     reset_session
     redirect_to sessions_path, notice: 'Logged out'
-    # redirect_back fallback_location: new_session_path, notice: 'Logged out'
   end
 
   private

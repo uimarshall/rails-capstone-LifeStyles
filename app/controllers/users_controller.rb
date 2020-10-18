@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       # We call the key 'user_id' stored in the session hash
       session[:user_id] = @user.id
       session[:username] = @user.username
-      # redirect_back(fallback_location: root_path)
+
       redirect_to articles_path, notice: 'Your account was successfully created'
 
     else

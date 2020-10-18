@@ -40,6 +40,10 @@ footer .navbar {
   background: #4e443f;
 }
 
+// footer .navbar-nav li:nth-child(3) {
+// 	color: #fff;
+// }
+
 .navbar-brand {
   font-family: "Open Sans", sans-serif;
   font-weight: 800;
@@ -47,7 +51,8 @@ footer .navbar {
 }
 
 form .nav-link {
-  color: #fff;
+  color: #7e7b79;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
 
 body .navbar-light .navbar-nav .nav-link {

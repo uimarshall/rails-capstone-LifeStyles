@@ -18,7 +18,7 @@ class VotesController < ApplicationController
       # end
       @vote = Vote.new(vote_params)
       if @vote.save
-        flash[:success] = 'Thanks for liking!'
+        flash[:success] = 'Thanks for voting!'
       else
         flash[:alert] = @vote.errors.full_messages.join(', ')
       end

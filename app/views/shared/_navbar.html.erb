@@ -11,7 +11,7 @@
     </ul>
     <form class="form-inline my-2 my-lg-0 ml-auto">
       <% if @current_user.nil? %>
-        <%= link_to "Log In",  sessions_path, class: "nav-link  my-2 my-sm-0 mr-3" %> |
+        <%= link_to "Log In",  sessions_path, class: "nav-link  my-2 my-sm-0 mr-3" %>|
         <%= link_to "Register",   new_user_path, class: "nav-link  my-2 my-sm-0" %>
         <%= link_to root_path, class: "nav-link"  do %>
           <i class="fa fa-search" aria-hidden="true"></i>
