@@ -13,12 +13,12 @@ RSpec.describe User, type: :model do
 
     it { should have_secure_password }
     it do
-      should validate_length_of(:password).
-        is_at_least(7)
+      should validate_length_of(:password)
+        .is_at_least(7)
     end
     it do
-      should validate_length_of(:username).
-        is_at_least(3)
+      should validate_length_of(:username)
+        .is_at_least(3)
     end
     it 'should not save wrong inputs to database' do
       user = User.new(username: 'baba', password: 'pass').save
