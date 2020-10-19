@@ -14,7 +14,8 @@ The project is  build for the Ruby on Rails capstone and based on lifestyle arti
 
 ## Video Presentation:
 
-[![screenshot](app/assets/images/video_presentation.png)](https://www.loom.com/share/40606e58c8d94ecb998cb7d7c0b1226f)
+[Watch life'n'style](https://www.loom.com/share/40606e58c8d94ecb998cb7d7c0b1226f)
+
 
 ## Link to Live host:
 
