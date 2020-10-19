@@ -63,7 +63,9 @@ Run `bundle install` to install the gems from the `Gemfile`.<br>
 **Step 4**<br>
 Run `yarn install` to install the packages from the `package.json` file.<br>
 **Step 5**<br>
-Run `rake db:migrate` to create you local database.
+Run `rake db:create` to create your local database.
+**Step 5**<br>
+Run `rake db:migrate` to migrate your local database.
 **Step 6**<br>
 Run `rails serve` to start the rails server.
 **Step 7**<br>

@@ -18,7 +18,7 @@
               <%# <%= vote_button(article) if @current_user  %>
               <% if Vote.find_by(user: @current_user, article: article) %>
                 <%= form_with(url: article_vote_path(article.id), method: :delete) do |form| %>
-                  <input type="hidden" name="article_id" value=<% @article.id %>>
+                  <input type="hidden" name="article.id" value=<% article.id %>>
                   <div class="actions">
                     <%= form.submit "UnVote", class: 'btn btn-danger' %>
                   </div>
