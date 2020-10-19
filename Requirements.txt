@@ -28,3 +28,4 @@ def create
   git remote -v #to check if the name has changed
   bundle install --without production
   git push heroku develop:master
+  heroku run rake db:migrate
