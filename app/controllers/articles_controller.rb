@@ -4,7 +4,6 @@ class ArticlesController < ApplicationController
   before_action :current_user
 
   def index
-    @test = Article.last
     @articles = Article.all
     @featured = Article.featured_article
     @categories = Category.order(:priority).limit(4).includes(:articles)

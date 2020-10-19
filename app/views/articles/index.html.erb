@@ -1,6 +1,6 @@
 <div class="feature-wrapper">
   <% if @articles.collect(&:image).detect(&:attached?) %>
-    <div class="featured" style="background-image: url(<%= rails_blob_url(@featured.image) %>);">
+    <div class="featured" style="background-image: url(<%= rails_blob_url(@featured.try(:image).blank? ? 'N/A' : @featured.image) %>);">
       <p class="feature-title"> <%= featured_title_link(@featured) %></p>
       <p class="feature-text"> <%= featured_content(@featured) %></p>
     </div>
