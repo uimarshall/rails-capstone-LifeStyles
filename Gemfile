@@ -41,6 +41,7 @@ gem 'hirb', '~> 0.7.3'
 
 # Use figaro to set ENV variables
 gem 'figaro', '~> 1.2'
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 
 # Use paperclip for image upload
 # gem 'paperclip', '~> 6.1'
@@ -66,7 +67,7 @@ group :development do
 end
 group :production do
   gem 'rails_12factor'
-  
+  gem 'aws-sdk-s3'
 end
 
 group :test do

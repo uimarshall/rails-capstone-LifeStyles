@@ -29,3 +29,6 @@ def create
   bundle install --without production
   git push heroku develop:master
   heroku run rake db:migrate
+  heroku run rails db:seed
+
+  
