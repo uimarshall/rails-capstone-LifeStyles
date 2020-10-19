@@ -10,11 +10,12 @@ The project is  build for the Ruby on Rails capstone and based on lifestyle arti
 
 > In this project, i built a `LifeStyle` app following the [Microverse](https://www.notion.so/Lifestyle-articles-b82a5f10122b4cec924cd5d4a6cf7561).<br>
 
-## ![screenshot](../../..images/life-n-style.png)
+## ![screenshot](app/assets/images/life-n-style.png)
 
 ## Video Presentation:
 
-[Life'n'Style](https://www.loom.com/share/40606e58c8d94ecb998cb7d7c0b1226f)
+[![screenshot](app/assets/images/video_presentation.png)](https://www.loom.com/share/40606e58c8d94ecb998cb7d7c0b1226f)
+
 ## Link to Live host:
 
 [Life'n'Style](https://lifenstyle.herokuapp.com/categories/5)
