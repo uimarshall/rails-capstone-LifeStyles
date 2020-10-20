@@ -21,7 +21,7 @@ def create
 
   I had to add has_many :votes_count, through: :votes, source: :article
   rails g scaffold Category name:string priority:integer
-
+  git remote rm heroku # to remove already deployed app so as to deploy new one
   heroku login
   heroku create
   heroku apps:rename entrelab

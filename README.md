@@ -19,7 +19,7 @@ The project is  build for the Ruby on Rails capstone and based on lifestyle arti
 
 ## Link to Live host:
 
-[Life'n'Style](https://lifenstyle.herokuapp.com/categories/5)
+[Life'n'Style](https://lyfenstyle.herokuapp.com/)
 
 ## Built With
 
@@ -64,11 +64,13 @@ Run `bundle install` to install the gems from the `Gemfile`.<br>
 Run `yarn install` to install the packages from the `package.json` file.<br>
 **Step 5**<br>
 Run `rake db:create` to create your local database.
-**Step 5**<br>
-Run `rake db:migrate` to migrate your local database.
 **Step 6**<br>
-Run `rails serve` to start the rails server.
+Run `rake db:migrate` to migrate your local database.
 **Step 7**<br>
+Run `rake db:seed` to migrate your local database.
+**Step 8**<br>
+Run `rails serve` to start the rails server.
+**Step 9**<br>
 You can navigate to `http://localhost:3000/` to see your application running<br>
 
 ## Authors
