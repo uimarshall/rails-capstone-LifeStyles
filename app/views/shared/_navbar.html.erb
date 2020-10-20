@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to root_path, class: "navbar-brand"  do %>
+    <i class="fa fa-language" aria-hidden="true"></i> Life'n'Style
+  <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <%= nav_items(@nav_categories) %>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 ml-auto">
+      <% if @current_user.nil? %>
+        <%= link_to "Log In",  sessions_path, class: "nav-link  my-2 my-sm-0 mr-3" %>|
+        <%= link_to "Register",   new_user_path, class: "nav-link  my-2 my-sm-0" %>
+        <%= link_to root_path, class: "nav-link"  do %>
+          <i class="fa fa-search" aria-hidden="true"></i>
+        <% end %>
+      <% else %>
+        <%= link_to "Log Out",  logout_path, method: :delete, data: {:confirm => 'Are you sure?'}, class: "nav-link btn btn-outline-danger my-2 my-sm-0 mr-3" %>
+      <% end %>
+    </form>
+  </div>
+</nav>
+</div>

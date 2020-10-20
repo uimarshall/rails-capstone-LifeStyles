@@ -1,0 +1,38 @@
+<div class="container">
+  <h1 class="main-text-color text-center"><%= @article.title %></h1>
+  <div class="col-md-12">
+    <div class="col-md-6 mb-100 text-center mx-auto">
+      <p>Category: <%= @article.categories[0].name %></p>
+      <p>
+        <h6 class="main-text-color">
+          <%= number_of_votes(@article) %>
+          <span> for this article</span>
+        </h6>
+      </p>
+      <p class="text-center">
+        <%= image_tag(@article.image) %>
+      </p>
+      <p class="text-left"><%= @article.text %></p>
+      <div>
+        <% if Vote.find_by(user: @current_user, article: @article) %>
+          <%= form_with(url: article_vote_path(@article.id), method: :delete) do |form| %>
+            <input type="hidden" name="article_id" value=<% @article.id %>>
+            <div class="actions">
+              <%= form.submit "UnVote", class: 'btn btn-danger' %>
+            </div>
+          <% end %>
+        <% else %>
+          <%= form_with(url: article_votes_path(@article.id)) do |form| %>
+            <input type="hidden" name="article_id" value=<% @article.id %>>
+            <% if logged_in? %>
+              <div class="actions">
+                <%= form.submit "Vote", class: 'btn btn-success' %>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+        <%= link_to 'Back To Articles', articles_path %>
+      </div>
+    </div>
+  </div>
+</div>

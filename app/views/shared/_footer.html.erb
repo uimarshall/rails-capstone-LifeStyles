@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <%= link_to root_path, class: "navbar-brand text-white"  do %>
+    <i class="fa fa-language" aria-hidden="true"></i> Life'n'Style
+  <% end %>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <%= link_to "Privacy Policy", root_path, class: "nav-link rules" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Terms & Conditions", root_path, class: "nav-link rules" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Copyright 2020. All rights reserved", root_path, class: "nav-link" %>
+    </li>
+  </ul>
+  <form class="form-inline my-2 my-lg-0 ml-auto">
+    <!-- Nav Icons -->
+    <div class="navbar-nav footer-info">
+      <li><span class='text-white'>Connect with us: </span></li>
+      <li class="nav-item border rounded-circle mx-2 search-icon">
+        <%= link_to "<i class='fa fa-twitter social-icons'></i>".html_safe, '#' %>
+      </li>
+      <li class="nav-item border rounded-circle mx-2 search-icon">
+        <%= link_to "<i class='fa fa-instagram social-icons'></i>".html_safe, '#' %>
+      </li>
+      <li class="nav-item border rounded-circle mx-2 search-icon">
+        <%= link_to "<i class='fa fa-facebook social-icons'></i>".html_safe, '#' %>
+      </li>
+    </div>
+  </form>
+</nav>

@@ -1,0 +1,197 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "font-awesome";
+
+body {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Open Sans", sans-serif;
+}
+// Gradient provided by @ https://uigradients.com/#MoonlitAsteroid
+.landing-banner {
+  background: #e0eafc;
+  background: linear-gradient(to right, #cfdef3, #e0eafc);
+  margin-top: -20px;
+}
+
+.navbar {
+  background: #fff;
+}
+
+footer .navbar {
+  background: #4e443f;
+}
+
+.navbar-brand {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  color: #835037;
+}
+
+form .nav-link {
+  color: #7e7b79;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+body .navbar-light .navbar-nav .nav-link {
+  color: #7e7b79;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+
+  &:hover {
+    color: #fe6001;
+    opacity: 0.8;
+  }
+}
+
+.navbar-light .navbar-toggler {
+  color: white;
+  border: 2px solid #f5f5f5;
+
+  &:hover,
+  &:focus {
+    color: whitesmoke;
+    opacity: 0.75;
+  }
+}
+
+img {
+  max-width: 100%; /* img will not spill out of parent container */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  height: 100vh;
+  margin-bottom: 0;
+}
+
+.text-orange {
+  color: #bd4b09;
+}
+
+.text-light-orange {
+  color: #bb866a;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  height: 50vh;
+  margin-bottom: 0;
+}
+
+.img-grid p {
+  margin-bottom: 14rem;
+  padding-left: 10px;
+}
+
+.cat_name-color {
+  color: #000;
+  font-weight: 600;
+}
+
+.main-text-color {
+  font-weight: 400;
+  color: #fe6001;
+}
+
+.link-title {
+  font-weight: 600;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.feature-wrapper .link-title {
+  font-weight: 600;
+  color: #bd4b09;
+  font-size: 1rem;
+  border: none;
+  padding: 10px;
+}
+
+.feature-wrapper,
+.img-grid .link-title {
+  color: #fff;
+}
+
+.featured {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+}
+
+.feature-wrapper {
+  height: 100vh;
+}
+
+.feature-title {
+  padding-top: 100px;
+  padding-left: 30px;
+  font-size: 2rem;
+}
+
+.feature-text {
+  padding-left: 30px;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.footer-info {
+  padding: 0;
+  margin-left: 20px;
+
+  li {
+    margin: 10px;
+
+    a {
+      color: #000;
+    }
+  }
+}
+
+.category {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.underline {
+  border-bottom: 2px solid #cff32d;
+}
+
+.social-icons {
+  border-radius: 100%;
+  border: 1px solid #fe6001;
+  font-size: 1rem;
+  background-color: #fe6001;
+  padding: 3px;
+}
+
+.rules {
+  color: #fe6001;
+}
+
+footer .rules {
+  color: #fe6001 !important;
+}

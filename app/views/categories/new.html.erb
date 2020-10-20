@@ -1,0 +1,11 @@
+<div class="container mt-5 mb-4">
+  <h2 class="text-center h1 mb-3">Create New Category</h2>
+  <div class="row">
+    <div class="col-md-4 offset-4">
+      <%= render 'form', category: @category %>
+    </div>
+  </div>
+</div>
+<div class="text-center mb-4">
+  <%= link_to 'Back To Categories', categories_path, class: 'btn btn-outline-info' %>
+</div>

@@ -1,0 +1,34 @@
+#1.  Menu Bar:Logo,  Home, Politics, Health, Education, Careers, Tech , Login, Register, search
+# 1. Home Page
+# *****************************************************
+# - Registration and login is required using devise
+# - A jumbotron with image at the background, the image correspond with the article,
+#   with highest number of votes
+# - List of all categories in order of priority as appeared on the navbar, Each category, 
+# should be displayed as a square with its name on the top and its most recent article's title in the bottom. 
+# The background image should be the image of the most recent article in this category.  
+
+# The votes will represent the comments in a blog app.
+def create
+    if current_user.votes.exists?(article_id: params[:article_id])
+      flash[:alert] = 'You have already voted for this article!'
+    else
+      current_user.votes_count << Article.find(params[:article_id])
+      flash[:notice] = 'You upvoted this article.'
+    end
+    redirect_back(fallback_location: root_path)
+  end
+
+  I had to add has_many :votes_count, through: :votes, source: :article
+  rails g scaffold Category name:string priority:integer
+  git remote rm heroku # to remove already deployed app so as to deploy new one
+  heroku login
+  heroku create
+  heroku apps:rename entrelab
+  git remote -v #to check if the name has changed
+  bundle install --without production
+  git push heroku develop:master
+  heroku run rake db:migrate
+  heroku run rails db:seed
+
+  

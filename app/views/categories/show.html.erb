@@ -1,0 +1,45 @@
+<div class="grid-container mt-0">
+  <% @category_articles.each_with_index do |article, index| %>
+    <div>
+      <% if article.image.attached? %>
+        <div class="img">
+          <%= image_tag(article.thumbnail) if index.odd? %>
+        </div>
+      <% end %>
+      <div class="content">
+        <div>
+          <div class="card-body mb-0">
+            <h5 class="main-text-color underline cat_name-color w-25"><%= @category.name %></h5>
+            <h6 class="mb-2 text-muted"><%= link_to category_article_title(article), article_path(article), class: 'cat_name-color' %></h6>
+            <p class="mb-0"><%= category_article_text(article) %></p>
+            <p><%= link_to "Read More", article, class: 'text-light-orange' %> </p>
+            <div class="d-flex justify-content-between mb-0">
+              <span class="main-text-color card-link"><%= number_of_votes(article) %> </span>
+              <%# <%= vote_button(article) if @current_user  %>
+              <% if Vote.find_by(user: @current_user, article: article) %>
+                <%= form_with(url: article_vote_path(article.id), method: :delete) do |form| %>
+                  <input type="hidden" name="article.id" value=<% article.id %>>
+                  <div class="actions">
+                    <%= form.submit "UnVote", class: 'btn btn-danger' %>
+                  </div>
+                <% end %>
+              <% else %>
+                <%= form_with(url: article_votes_path(article.id)) do |form| %>
+                  <input type="hidden" name="article_id" value=<% article.id %>>
+                  <% if logged_in? %>
+                    <div class="actions">
+                      <%= form.submit "Vote", class: 'btn btn-success' %>
+                    </div>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% if article.image.attached? %>
+        <%= image_tag(article.thumbnail) if index.even? %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
